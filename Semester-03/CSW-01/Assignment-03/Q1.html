@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Color Changer</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        div {
+            padding: 20px;
+            margin: 10px;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Change Background Color and Toggle Divs</h1>
+    
+    <button id="redButton">Red</button>
+    <button id="blueButton">Blue</button>
+    <button id="greenButton">Green</button>
+    <button id="toggleDivsButton">Toggle Divs</button>
+
+    <div>This is a div element 1</div>
+    <div>This is a div element 2</div>
+    <div>This is a div element 3</div>
+
+    <script>
+        $(document).ready(function() {
+            $('#redButton').click(function() {
+                $('body').css('background-color', 'red');
+            });
+
+            $('#blueButton').click(function() {
+                $('body').css('background-color', 'blue');
+            });
+
+            $('#greenButton').click(function() {
+                $('body').css('background-color', 'green');
+            });
+
+            $('#toggleDivsButton').click(function() {
+                $('div').toggle();
+            });
+        });
+    </script>
+
+</body>
+</html>

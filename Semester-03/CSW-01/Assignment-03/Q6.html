@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            $("#bt1").click(function(){
+                $("div").addClass("highlight");
+            });
+            $("#bt2").click(function(){
+                $("div").addClass("dim");
+            });
+        });
+    </script>
+    <style>
+        .highlight{
+            background-color: red;
+        }
+        .dim{
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+    <button id="bt1">Add Highlight</button>
+    <button id="bt2">Add Dim</button>
+    <div>This is first div</div>
+</body>
+</html>

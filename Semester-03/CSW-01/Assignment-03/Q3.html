@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start Stop Animation</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        #myDiv {
+            background-color: lightblue;
+            width: 100px;
+            height: 100px;
+            margin: auto;
+            transition: width 0.5s; /* Smooth transition for width */
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Animation Control</h1>
+    <div id="myDiv"></div>
+    <br>
+    <button id="startButton">Start</button>
+    <button id="stopButton">Stop</button>
+
+    <script>
+        $(document).ready(function() {
+            let animation; // Variable to hold the animation
+
+            // Start animation on button click
+            $('#startButton').click(function() {
+                // If an animation is already running, don't start a new one
+                if (!animation) {
+                    animation = $('#myDiv').animate({ width: '400px' }, 2000, function() {
+                        animation = null; // Reset animation variable when done
+                    });
+                }
+            });
+
+            // Stop animation on button click
+            $('#stopButton').click(function() {
+                // Stop the animation immediately
+                $('#myDiv').stop(); 
+                animation = null; // Reset animation variable
+            });
+        });
+    </script>
+
+</body>
+</html>

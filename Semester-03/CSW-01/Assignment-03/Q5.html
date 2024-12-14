@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery List Manipulation</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        ul {
+            list-style-type: none; /* Remove bullet points */
+            padding: 0;
+        }
+        li {
+            margin: 10px 0;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Topic List Manipulation</h1>
+    <h2 id="listTitle">List of Topics Covered</h2>
+    <ul id="topicList">
+        <li>Getting Started with Full Stack</li>
+        <li>HTML</li>
+        <li>CSS</li>
+    </ul>
+
+    <button id="manipulateListButton">Manipulate List</button>
+
+    <script>
+        $(document).ready(function() {
+            $('#manipulateListButton').click(function() {
+                // Prepend new item at the beginning
+                $('#topicList').prepend('<li>Introduction to Full Stack Development</li>');
+
+                // Append new item at the end
+                $('#topicList').append('<li>CSS</li>');
+
+                // Insert a paragraph after the list
+                $('#topicList').after('<p>Topics updated</p>');
+
+                // Add a heading before the list
+                $('#listTitle').before('<h2>List of Topics Covered</h2>');
+            });
+        });
+    </script>
+
+</body>
+</html>

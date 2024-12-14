@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove Element by ID</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin: 50px; }
+        #content { margin: 20px auto; }
+        p { margin: 10px; padding: 10px; border: 1px solid #000; }
+        button { margin: 10px; padding: 10px 20px; font-size: 16px; }
+    </style>
+</head>
+<body>
+
+    <h1>Remove Element by ID</h1>
+    <div id="content">
+        <p id="para1">This is paragraph 1.</p>
+        <p id="para2">This is paragraph 2.</p>
+        <p id="para3">This is paragraph 3.</p>
+        <p id="para4">This is paragraph 4.</p>
+    </div>
+
+    <h2>Remove Paragraph</h2>
+    <input type="text" id="elementId" placeholder="Enter ID to remove">
+    <button id="removeButton">Remove</button>
+
+    <script>
+        $(function() {
+            $('#removeButton').click(function() {
+                var id = $('#elementId').val();
+                $('#' + id).remove(); // Remove the element with the matching ID
+                $('#elementId').val(''); // Clear the input field
+            });
+        });
+    </script>
+
+</body>
+</html>

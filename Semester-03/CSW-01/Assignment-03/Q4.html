@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch Text and HTML</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        #myDiv {
+            border: 1px solid #000;
+            padding: 10px;
+            margin: 20px auto;
+            width: 300px;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Fetch Content Example</h1>
+    <p id="myParagraph">This is a sample paragraph that contains some text.</p>
+    <div id="myDiv">
+        <strong>This is a div element.</strong> It contains <em>HTML</em> content.
+    </div>
+    <br>
+    <button id="fetchTextButton">Fetch Text</button>
+    <button id="fetchHtmlButton">Fetch HTML</button>
+
+    <script>
+        $(document).ready(function() {
+            // Fetch text content of the <p> element
+            $('#fetchTextButton').click(function() {
+                var textContent = $('#myParagraph').text(); // Get text content
+                alert(textContent); // Display text content in an alert
+            });
+
+            // Fetch HTML content of the <div> element
+            $('#fetchHtmlButton').click(function() {
+                var htmlContent = $('#myDiv').html(); // Get HTML content
+                alert(htmlContent); // Display HTML content in an alert
+            });
+        });
+    </script>
+
+</body>
+</html>

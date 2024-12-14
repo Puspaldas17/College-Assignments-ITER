@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Div Actions</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        #myDiv {
+            background-color: lightblue;
+            border: 2px solid black;
+            padding: 50px;
+            margin: auto;
+            width: 200px;
+            transition: border-color 0.3s; /* Smooth transition for border color */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Interact with the Div!</h1>
+    <div id="myDiv">Click me!</div>
+
+    <script>
+        $(document).ready(function() {
+            // Change text on click
+            $('#myDiv').click(function() {
+                $(this).text('Clicked!');
+            });
+
+            // Change background color on double click
+            $('#myDiv').dblclick(function() {
+                $(this).css('background-color', 'orange');
+            });
+
+            // Change border color on mouse enter
+            $('#myDiv').mouseenter(function() {
+                $(this).css('border-color', 'green');
+            });
+
+            // Revert border color on mouse leave
+            $('#myDiv').mouseleave(function() {
+                $(this).css('border-color', 'black');
+            });
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-Up Form</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin: 50px; }
+        form { display: inline-block; text-align: left; }
+        input[type="text"], input[type="email"], input[type="password"] {
+            width: 200px; 
+            padding: 10px; 
+            margin: 10px 0; 
+            border: 1px solid #ccc; 
+            border-radius: 5px;
+            transition: border-color 0.3s;
+        }
+        input[type="text"]:hover, input[type="email"]:hover, input[type="password"]:hover {
+            border-color: #007BFF;
+        }
+        button {
+            padding: 10px 20px; 
+            background-color: #007BFF; 
+            color: white; 
+            border: none; 
+            border-radius: 5px; 
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .error { color: red; margin-top: 10px; }
+    </style>
+</head>
+<body>
+
+    <h1>Sign-Up Form</h1>
+    <form id="signupForm">
+        <input type="text" id="username" placeholder="Username" required><br>
+        <input type="email" id="email" placeholder="Email" required><br>
+        <input type="password" id="password" placeholder="Password" required><br>
+        <button type="submit">Sign Up</button>
+        <div class="error" id="errorMessage"></div>
+    </form>
+
+    <script>
+        $(function() {
+            $('#signupForm').submit(function(event) {
+                event.preventDefault(); // Prevent form submission
+
+                var username = $('#username').val();
+                var email = $('#email').val();
+                var password = $('#password').val();
+                var errorMessage = '';
+
+                // Check for empty fields
+                if (username === "") {
+                    errorMessage += 'Username is required.<br>';
+                }
+                if (email === "") {
+                    errorMessage += 'Email is required.<br>';
+                } else {
+                    // Validate email format
+                    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailPattern.test(email)) {
+                        errorMessage += 'Please enter a valid email address.<br>';
+                    }
+                }
+                if (password === "") {
+                    errorMessage += 'Password is required.<br>';
+                }
+
+                // Display error message if any
+                if (errorMessage) {
+                    $('#errorMessage').html(errorMessage);
+                } else {
+                    $('#errorMessage').html('Form submitted successfully!'); // Placeholder for successful submission
+                    // Here you can add further actions such as sending data to a server
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
