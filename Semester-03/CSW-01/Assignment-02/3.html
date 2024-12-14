@@ -1,0 +1,30 @@
+  <!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hover Effect</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .special-div {
+            font-size: 24px;
+            color: black;
+            transition: color 0.3s; /* Smooth transition for color change */
+        }
+
+        /* Change the text color when the image is hovered over */
+        .hover-image:hover + .special-div {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <img class="hover-image" src="image.jpg" alt="An image">
+    <div class="special-div">My Special Div</div>
+</body>
+</html>

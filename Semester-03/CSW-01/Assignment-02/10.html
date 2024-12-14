@@ -1,0 +1,110 @@
+Answere 10
+<!doctype html>
+<html>
+    <head>
+        <style type="text/css">
+            *{
+                margin: 0%;
+                padding: 0%;
+                box-sizing: border-box;
+
+
+            }
+            body{
+                font-size: 20px;
+                background-color: snow;
+            }
+            img{
+                border-radius: 108px;
+            }
+            .container{
+                background: rgb(184, 176, 176);
+                width: 500px;
+                padding: 25px;
+                margin: 50px auto 0;
+                
+
+            }
+            .container h1{
+                font-size: 40px;
+                padding: 5px;
+                text-align: center ;
+
+
+            }
+            .input-name{
+                position: revert;
+                margin: 20px auto;
+            
+
+
+
+            }
+            input[type=text], input[type=email],input[type=mobile], input[type=password],
+            input[type=submit]
+           {
+                width: 100%;      
+                padding: 12px 16px;
+                margin: 0 auto;
+                border: 5px solid darkblue;
+                border-radius: 4px;
+                cursor: pointer;
+                display: block;
+                text-align: center;              
+            
+            }
+            input[type=submit]:hover 
+                    {
+                    background-color: green;
+                    }
+            input[type=submit]
+                {background-color: orange;
+                    border: 0px orange;
+
+                }                
+        </style>
+        <body>
+            <form>
+                <div class="container">
+                <center><img src="https://images.squarespace-cdn.com/content/v1/57713a8e2994cae381dd86fe/1510405002757-FP2W9HV8ZA0HP2IF3O6A/SOA-PNG.png" height="120px"; width="120px" ></center><br>
+                <center> <h3 style="color: rgb(8, 8, 8);font-family:Arial;" >Registration</h3></center>
+                <br>
+                <div class="input-name"><label>UserName</label><input type="text" class="NAME" placeholder="Enter Name"/>
+                </div>
+                <div class="input-name"><label>E-mail</label><input type="email" placeholder="Enter Email", class= "email-name"/>
+                </div>
+                <div class="input-name"><label>Mobile</label><input type="mobile" placeholder="Enter your No.", class= "mobile-no"/>
+                </div>
+                <div class="input-name"><label> Gender &nbsp</label><br>
+                    <input type="radio" class="radio-button", name= "gender-name">
+                <label>Female</label>
+                <input type="radio" class="radio-button", name= "gender-name">
+                <label>Male</label>
+                </div>
+                <div class="input-name">
+                <label>City</label>
+                <select style="padding: 12px 16px; margin: 0 auto; width:100%; border: 5px solid darkblue; border-radius: 4px; cursor: pointer; display: block; text-align: left">
+                    <option>Select City</option>
+                    <option>BBSR</option>
+                    <option>CTC</option>
+                    <option>PUNE</option>
+                    <option>KOLKATA</option>
+                    <option>C&D</option>
+                    <option>Select City By Default</option>
+                </select>
+                </div>
+                <div class="input-name">
+                <label>Password</label>
+                <input type="password" id="psw" name="psw" placeholder="Give Valid Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+                </div>
+                <div class="line">
+                <div class="input-name">
+                <input type="submit" value="Sign Up" />
+                </div>
+            </div>
+            </div>      
+
+            </form>
+        </body>
+        </head>
+    </html>
